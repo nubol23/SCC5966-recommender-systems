@@ -1,4 +1,7 @@
 *.npy
+*.npz
+*.pt
+*.dat
 *.csv
 .idea
 .ipynb_checkpoints
