@@ -1,0 +1,17 @@
+/home/nubol23/Desktop/Installers/clion-2022.1.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/nubol23/Desktop/Installers/clion-2022.1.3/bin/ninja/linux/ninja -G Ninja -S /home/nubol23/Desktop/Codes/USP/SCC5966/kaggle/notebooks/ProjectFood/evaluate_models/user_knn -B /home/nubol23/Desktop/Codes/USP/SCC5966/kaggle/notebooks/ProjectFood/evaluate_models/user_knn/cmake-build-debug
+-- The C compiler identification is GNU 9.4.0
+-- The CXX compiler identification is GNU 9.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Armadillo: /usr/include (found version "11.2.2") 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/nubol23/Desktop/Codes/USP/SCC5966/kaggle/notebooks/ProjectFood/evaluate_models/user_knn/cmake-build-debug

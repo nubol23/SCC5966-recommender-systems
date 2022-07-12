@@ -1,0 +1,23 @@
+Preprocessing:
+    * map recipe_id and user_ids to 0 index values (interactions file)
+    * Compute tfidf of the reviews, convert to torch sparse tensor, store into file
+    * Use maped user_id to redefine the contributor_id column in recipes
+    * map tags to ids
+    * concatenate all steps into one text and run tfidf for al recipes, convert to torch sparse matrix and save to file (preparation)
+Dataset preparation:
+    INTERACTIONS CSV
+    * Use map to redefine the user and recipe ids in the interactions file
+    * save the review_id in the review column, this to call the correct tfidf embedding from the matrix
+    RECIPES CSV
+    * Use map to redefine the recipe_id and contributor_id (user_id)
+    * use minuts column
+    * Use maped tags
+    * Use full nutrition array
+    * use n_steps
+    * save the duplicated recipe_id to call the correct tfidf row to get the embedded preparation
+    
+* Split into train, val and test
+* Sort recipes by id (to improve access on the dataloader taking advantage that the ids are remapped)
+* Prepare data loader
+* Train, validate
+* Take a user, see what the model predicts for it
