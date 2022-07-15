@@ -1,5 +1,8 @@
 #include <iostream>
 #include <rapidcsv.h>
+
+#define ARMA_NO_DEBUG
+
 #include <armadillo>
 #include <indicators.hpp>
 #include <algorithm>

@@ -5,8 +5,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from copy import deepcopy
 
-from torch.backends import cudnn
-
 
 class GMF(nn.Module):
     def __init__(self, n_users, n_items, k) -> None:
@@ -25,7 +23,8 @@ class GMF(nn.Module):
         qi = self.Q(item_ids)
 
         # X = torch.sum(pu * qi, dim=1, keepdim=True)
-        X = self.h(pu * qi)
+        # X = self.h(pu * qi)
+        X = pu * qi
 
         return X
 
@@ -67,7 +66,9 @@ class MLP(nn.Module):
 
 
 class NeuMF(nn.Module):
-    def __init__(self, gmf: GMF, mlp: MLP, alpha: float, mlp_out_size: int) -> None:
+    def __init__(
+            self, gmf: GMF, mlp: MLP, alpha: float, mlp_out_size: int, gmf_out_size: int
+    ) -> None:
         super(NeuMF, self).__init__()
 
         self.gmf: GMF = deepcopy(gmf)
@@ -75,7 +76,7 @@ class NeuMF(nn.Module):
 
         self.alpha = alpha
 
-        self.h = nn.Linear(mlp_out_size + 1, 1)
+        self.h = nn.Linear(mlp_out_size + gmf_out_size, 1)
         nn.init.normal_(self.h.weight, std=0.01)
 
     def forward(self, user_ids, item_ids):

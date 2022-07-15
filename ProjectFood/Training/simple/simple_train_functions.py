@@ -30,6 +30,7 @@ def define_model(
         MLP(n_users, n_items, k_mlp, layer_sizes),
         alpha=alpha,
         mlp_out_size=layer_sizes[-1],
+        gmf_out_size=k_gmf,
     ).cuda()
 
 
